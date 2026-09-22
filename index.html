@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 🌻</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center bottom,
+                    #174a2b 0%,
+                    #0d2b1c 45%,
+                    #06150e 100%
+                );
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        /* =========================
+           MENSAJE PRINCIPAL
+        ========================== */
+
+        .mensaje {
+
+            position: absolute;
+
+            top: 7%;
+
+            left: 0;
+
+            width: 100%;
+
+            text-align: center;
+
+            color: #ffe45c;
+
+            font-size: clamp(25px, 5vw, 48px);
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 15px #ffd000;
+
+            z-index: 20;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            padding: 0 15px;
+
+        }
+
+
+        .submensaje {
+
+            display: block;
+
+            margin-top: 10px;
+
+            font-size:
+                clamp(14px, 2vw, 18px);
+
+            font-weight: normal;
+
+            color: #fff5b0;
+
+            text-shadow:
+                0 0 8px rgba(255, 217, 47, .5);
+
+        }
+
+
+        /* =========================
+           RAMO
+        ========================== */
+
+        .ramo {
+
+            position: absolute;
+
+            width: 520px;
+
+            height: 500px;
+
+            left: 50%;
+
+            bottom: 2%;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 5;
+
+            animation:
+                aparecerRamo 2s ease forwards;
+
+        }
+
+
+        /* =========================
+           TALLOS
+        ========================== */
+
+        .tallo {
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 50%;
+
+            width: 9px;
+
+            height: 300px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #145c32,
+                    #2c994d,
+                    #145c32
+                );
+
+            border-radius: 10px;
+
+            transform-origin: bottom;
+
+        }
+
+
+        .tallo1 {
+
+            transform:
+                rotate(-22deg);
+
+            height: 300px;
+
+        }
+
+
+        .tallo2 {
+
+            transform:
+                rotate(-11deg);
+
+            height: 340px;
+
+        }
+
+
+        .tallo3 {
+
+            transform:
+                rotate(0deg);
+
+            height: 370px;
+
+        }
+
+
+        .tallo4 {
+
+            transform:
+                rotate(11deg);
+
+            height: 340px;
+
+        }
+
+
+        .tallo5 {
+
+            transform:
+                rotate(22deg);
+
+            height: 300px;
+
+        }
+
+
+        /* =========================
+           FLORES
+        ========================== */
+
+        .flor {
+
+            position: absolute;
+
+            width: 115px;
+
+            height: 115px;
+
+            background: #ffd92f;
+
+            border-radius: 50%;
+
+            box-shadow:
+
+                0 -42px 0 #ffd92f,
+
+                0 42px 0 #ffd92f,
+
+                42px 0 0 #ffd92f,
+
+                -42px 0 0 #ffd92f,
+
+                30px -30px 0 #ffd92f,
+
+                -30px -30px 0 #ffd92f,
+
+                30px 30px 0 #ffd92f,
+
+                -30px 30px 0 #ffd92f;
+
+            animation:
+                balanceo 4s ease-in-out infinite;
+
+        }
+
+
+        /* =========================
+           CENTRO DE LAS FLORES
+        ========================== */
+
+        .flor::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 48px;
+
+            height: 48px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #5a3510 20%,
+                    #8b5a16 45%,
+                    #5a3510 100%
+                );
+
+            border-radius: 50%;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: 3;
+
+        }
+
+
+        /* =========================
+           POSICIÓN DE FLORES
+        ========================== */
+
+        .flor1 {
+
+            left: 25px;
+
+            top: 120px;
+
+            transform:
+                scale(.75);
+
+        }
+
+
+        .flor2 {
+
+            left: 115px;
+
+            top: 45px;
+
+            transform:
+                scale(.9);
+
+        }
+
+
+        .flor3 {
+
+            left: 205px;
+
+            top: 0;
+
+            transform:
+                scale(1);
+
+        }
+
+
+        .flor4 {
+
+            left: 300px;
+
+            top: 45px;
+
+            transform:
+                scale(.9);
+
+        }
+
+
+        .flor5 {
+
+            left: 390px;
+
+            top: 120px;
+
+            transform:
+                scale(.75);
+
+        }
+
+
+        /* =========================
+           HOJAS
+        ========================== */
+
+        .hoja {
+
+            position: absolute;
+
+            width: 75px;
+
+            height: 32px;
+
+            background: #238044;
+
+            border-radius:
+                100% 0 100% 0;
+
+            z-index: 2;
+
+        }
+
+
+        .hoja1 {
+
+            left: 125px;
+
+            bottom: 115px;
+
+            transform:
+                rotate(25deg);
+
+        }
+
+
+        .hoja2 {
+
+            left: 320px;
+
+            bottom: 140px;
+
+            transform:
+                rotate(-25deg);
+
+        }
+
+
+        .hoja3 {
+
+            left: 185px;
+
+            bottom: 80px;
+
+            transform:
+                rotate(-20deg);
+
+        }
+
+
+        .hoja4 {
+
+            left: 260px;
+
+            bottom: 70px;
+
+            transform:
+                rotate(20deg);
+
+        }
+
+
+        /* =========================
+           BOTÓN
+        ========================== */
+
+        .boton {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 5%;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 30;
+
+            padding:
+                15px 28px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: #ffd92f;
+
+            color: #493600;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+
+                0 5px 20px rgba(0,0,0,.4),
+
+                0 0 20px
+                rgba(255,217,47,.3);
+
+            transition: .3s;
+
+        }
+
+
+        .boton:hover {
+
+            transform:
+                translateX(-50%)
+                scale(1.08);
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(255,217,47,.5);
+
+        }
+
+
+        /* =========================
+           CARTA
+        ========================== */
+
+        #carta {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.78);
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 100;
+
+            padding: 20px;
+
+        }
+
+
+        .contenido {
+
+            position: relative;
+
+            width: 100%;
+
+            max-width: 500px;
+
+            padding: 35px;
+
+            background: #fffdf0;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            color: #493b16;
+
+            box-shadow:
+                0 0 50px
+                rgba(255,217,47,.5);
+
+            animation:
+                cartaAparecer .5s ease;
+
+        }
+
+
+        .contenido h1 {
+
+            color: #d59b00;
+
+            font-size: 32px;
+
+            margin-top: 5px;
+
+        }
+
+
+        .contenido p {
+
+            font-size: 18px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================
+           BOTÓN CERRAR
+        ========================== */
+
+        .cerrar {
+
+            position: absolute;
+
+            top: 10px;
+
+            right: 15px;
+
+            border: none;
+
+            background: none;
+
+            font-size: 30px;
+
+            cursor: pointer;
+
+            color: #555;
+
+        }
+
+
+        /* =========================
+           FIRMA
+        ========================== */
+
+        .firma {
+
+            margin-top: 25px;
+
+            font-weight: bold;
+
+            color: #c28b00;
+
+            font-size: 20px;
+
+        }
+
+
+        /* =========================
+           CORAZONES
+        ========================== */
+
+        .corazon {
+
+            position: fixed;
+
+            bottom: -40px;
+
+            font-size: 25px;
+
+            animation:
+                subir 5s linear forwards;
+
+            pointer-events: none;
+
+            z-index: 2;
+
+            opacity: .85;
+
+            filter:
+                drop-shadow(
+                    0 0 5px
+                    rgba(255,255,255,.25)
+                );
+
+        }
+
+
+        /* =========================
+           ANIMACIONES
+        ========================== */
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        @keyframes aparecerRamo {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    translateY(80px)
+                    scale(.7);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(-50%)
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        @keyframes balanceo {
+
+            0%, 100% {
+
+                margin-top: 0;
+
+            }
+
+            50% {
+
+                margin-top: -5px;
+
+            }
+
+        }
+
+
+        @keyframes cartaAparecer {
+
+            from {
+
+                transform:
+                    scale(.7);
+
+                opacity: 0;
+
+            }
+
+            to {
+
+                transform:
+                    scale(1);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        @keyframes subir {
+
+            from {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+
+            }
+
+            10% {
+
+                opacity: .85;
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .mensaje {
+
+                top: 5%;
+
+                font-size: 27px;
+
+            }
+
+
+            .submensaje {
+
+                font-size: 14px;
+
+            }
+
+
+            .ramo {
+
+                width: 360px;
+
+                height: 400px;
+
+                bottom: 8%;
+
+            }
+
+
+            .flor {
+
+                width: 80px;
+
+                height: 80px;
+
+                box-shadow:
+
+                    0 -30px 0 #ffd92f,
+
+                    0 30px 0 #ffd92f,
+
+                    30px 0 0 #ffd92f,
+
+                    -30px 0 0 #ffd92f,
+
+                    21px -21px 0 #ffd92f,
+
+                    -21px -21px 0 #ffd92f,
+
+                    21px 21px 0 #ffd92f,
+
+                    -21px 21px 0 #ffd92f;
+
+            }
+
+
+            .flor::after {
+
+                width: 34px;
+
+                height: 34px;
+
+            }
+
+
+            .flor1 {
+
+                left: 5px;
+
+                top: 110px;
+
+                transform:
+                    scale(.75);
+
+            }
+
+
+            .flor2 {
+
+                left: 75px;
+
+                top: 45px;
+
+                transform:
+                    scale(.85);
+
+            }
+
+
+            .flor3 {
+
+                left: 140px;
+
+                top: 15px;
+
+                transform:
+                    scale(.9);
+
+            }
+
+
+            .flor4 {
+
+                left: 205px;
+
+                top: 45px;
+
+                transform:
+                    scale(.85);
+
+            }
+
+
+            .flor5 {
+
+                left: 275px;
+
+                top: 110px;
+
+                transform:
+                    scale(.75);
+
+            }
+
+
+            .tallo {
+
+                height: 260px;
+
+            }
+
+
+            .boton {
+
+                bottom: 3%;
+
+                font-size: 15px;
+
+            }
+
+
+            .contenido {
+
+                padding:
+                    30px 20px;
+
+            }
+
+
+            .contenido p {
+
+                font-size: 16px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MÚSICA
+    ========================== -->
+
+    <audio id="musica" loop>
+
+        <source
+            src="musica.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =========================
+         MENSAJE
+    ========================== -->
+
+    <div class="mensaje">
+
+        🌻 Estas flores amarillas son para ti 🌻
+
+        <span class="submensaje">
+
+            Un pequeño detalle hecho especialmente para vos a la distancia. ❤️
+
+        </span>
+
+    </div>
+
+
+
+    <!-- =========================
+         RAMO
+    ========================== -->
+
+    <div class="ramo">
+
+
+        <div class="tallo tallo1"></div>
+
+        <div class="tallo tallo2"></div>
+
+        <div class="tallo tallo3"></div>
+
+        <div class="tallo tallo4"></div>
+
+        <div class="tallo tallo5"></div>
+
+
+        <div class="hoja hoja1"></div>
+
+        <div class="hoja hoja2"></div>
+
+        <div class="hoja hoja3"></div>
+
+        <div class="hoja hoja4"></div>
+
+
+        <div class="flor flor1"></div>
+
+        <div class="flor flor2"></div>
+
+        <div class="flor flor3"></div>
+
+        <div class="flor flor4"></div>
+
+        <div class="flor flor5"></div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         BOTÓN
+    ========================== -->
+
+    <button
+        class="boton"
+        onclick="mostrarCarta()"
+    >
+
+        Abrir carta ❤️
+
+    </button>
+
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <div id="carta">
+
+
+        <div class="contenido">
+
+
+            <button
+                class="cerrar"
+                onclick="cerrarCarta()"
+            >
+
+                ×
+
+            </button>
+
+
+            <h1>
+
+                Para ti mi bebecita ❤️
+
+            </h1>
+
+
+            <p>
+
+                Quería regalarte unas flores,
+
+                pero la distancia no me dejaba
+
+                entonces pensé en dartelas
+                
+                a mi manera. ❤️🌻
+
+            </p>
+
+
+            <p>
+
+                Espero que cuando veas esto
+
+                te saque aunque sea
+
+                una pequeña sonrisa.
+
+            </p>
+
+
+            <p>
+
+                Porque te amo muchísimo
+
+                y quería tener un pequeño
+
+                detalle contigo. ❤️
+
+            </p>
+
+
+            <div class="firma">
+
+                Te amo preciosa  ❤️🌻
+                21/09/2026
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           ABRIR CARTA
+        ========================== */
+
+        function mostrarCarta() {
+
+            document.getElementById("carta")
+                .style.display = "flex";
+
+
+            const musica =
+                document.getElementById("musica");
+
+
+            musica.play().catch(error => {
+
+                console.log(
+                    "No se pudo reproducir la música:",
+                    error
+                );
+
+            });
+
+        }
+
+
+        /* =========================
+           CERRAR CARTA
+        ========================== */
+
+        function cerrarCarta() {
+
+            document.getElementById("carta")
+                .style.display = "none";
+
+        }
+
+
+        /* =========================
+           CREAR CORAZÓN
+        ========================== */
+
+        function crearCorazon() {
+
+
+            const corazon =
+                document.createElement("div");
+
+
+            corazon.classList.add("corazon");
+
+
+            const tipos = [
+
+                "❤️",
+                "💛",
+                "💕",
+                "💗",
+                "💖"
+
+            ];
+
+
+            corazon.innerHTML =
+                tipos[
+                    Math.floor(
+                        Math.random() *
+                        tipos.length
+                    )
+                ];
+
+
+            /* Posición */
+
+            corazon.style.left =
+                Math.random() * 100 + "vw";
+
+
+            /* Tamaño */
+
+            const tamaño =
+                15 +
+                Math.random() * 25;
+
+
+            corazon.style.fontSize =
+                tamaño + "px";
+
+
+            /* Duración */
+
+            const duracion =
+                4 +
+                Math.random() * 5;
+
+
+            corazon.style.animationDuration =
+                duracion + "s";
+
+
+            /* Añadir */
+
+            document.body.appendChild(
+                corazon
+            );
+
+
+            /* Eliminar */
+
+            setTimeout(() => {
+
+                corazon.remove();
+
+            }, duracion * 1000);
+
+        }
+
+
+
+        /* =========================
+           LLUVIA CONTINUA
+        ========================== */
+
+        setInterval(() => {
+
+            crearCorazon();
+
+        }, 180);
+
+
+
+        /* =========================
+           CORAZONES INICIALES
+        ========================== */
+
+        for (
+            let i = 0;
+            i < 25;
+            i++
+        ) {
+
+            setTimeout(() => {
+
+                crearCorazon();
+
+            }, i * 100);
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
